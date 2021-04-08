@@ -1,0 +1,9 @@
+package com.trifulcas.clases;
+
+public class Enemigo {
+
+	public Enemigo() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

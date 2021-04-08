@@ -1,0 +1,9 @@
+package com.trifulcas.clases;
+
+abstract public class Broker implements Bolsa {
+
+	public Broker() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

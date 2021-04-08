@@ -1,0 +1,17 @@
+package com.trifulcas.pruebas;
+
+import com.trifulcas.clases.Garage;
+import com.trifulcas.clases.Vehiculo;
+
+public class Probador {
+
+	public static void main(String[] args) {
+	
+		StringBuilder sb=new StringBuilder("Hello ");
+		sb.append("que tal");
+		System.out.println(sb);
+		
+		
+	}
+
+}

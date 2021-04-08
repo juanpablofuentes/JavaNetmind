@@ -1,0 +1,27 @@
+package com.trifulcas.ejercicio01;
+
+import java.time.LocalDate;
+
+public class CitasMedico {
+	private LocalDate[] fechas;
+
+	void CitasMedico() {
+		// LLamo al constructor con parámetro fecha con la fecha de hoy
+	}
+
+	void CitasMedico(String fecha) {
+		//Parseo la fecha y llamo al constructor con parámetro fecha
+	}
+
+	void CitasMedico(LocalDate fecha) {
+		// Crearé el array con un tamaño de 12
+		// Voy a ir añadiendo las fechas sumando 15 días
+		// Hay que comprobar que no sea fin de semana
+		fechas=new LocalDate[12];
+		fechas[0]=fecha;
+	}
+	public LocalDate proximaCita() {
+		//Devolveremos la próxima cita a partir de hoy
+		return null;
+	}
+}

@@ -1,0 +1,5 @@
+package com.trifulcas.clases;
+
+public interface Financiero {
+
+}

@@ -1,0 +1,38 @@
+package com.trifulcas.ejemplos;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class EjemplosArrayList {
+
+	public static void main(String[] args) {
+		List<Alumno> alumnos=new ArrayList<Alumno>();
+
+		alumnos.add(new Alumno("Eva",6));
+		alumnos.add(new Alumno("Rosa",7));
+		alumnos.add(new Alumno("Pep",3));
+		alumnos.add(new Alumno("Ana",4));
+		
+		System.out.println(alumnos);
+		
+		List<String> alumnosTrim=arrayTrim(alumnos);
+		
+		System.out.println(alumnosTrim);
+		Collections.shuffle(alumnosTrim);
+		System.out.println(alumnosTrim);
+		Collections.sort(alumnosTrim);
+		System.out.println(alumnosTrim);
+	}
+
+	// Tanto lo que devuelvo como el parámetro es de tipo List
+	public static List<String> arrayTrim(List<String> lista){
+		List<String> res=new ArrayList<String>();
+		for(String el:lista) {
+			if (el!="") {
+				res.add(el);
+			}
+		}
+		return res;
+	}
+}

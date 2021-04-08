@@ -1,0 +1,24 @@
+package com.trifulcas.clases;
+
+
+// Al implementar 'Financiero' estoy obligado a definir los métodos
+// incluídos en el interfaz: interes e irpf
+public class Banco implements Financiero {
+	private int saldo;
+	public Banco() {
+		saldo=9000;
+	}
+
+	@Override
+	public double interes() {
+		if (saldo)
+		return 0.5;
+	}
+
+	@Override
+	public double irpf() {
+		
+		return 0.12;
+	}
+
+}

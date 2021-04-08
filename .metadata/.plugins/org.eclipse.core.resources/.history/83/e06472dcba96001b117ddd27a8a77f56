@@ -1,0 +1,17 @@
+package com.trifulcas.ejemplos;
+
+public class Ejercicios {
+
+	public static void main(String[] args) {
+		System.out.println(esPalindromo("Viva la paella"));
+		System.out.println(esPalindromo("Sara Baras"));
+		System.out.println(esPalindromo("Isaac no ronca asi"));
+
+	}
+
+	public static boolean esPalindromo(String cadena) {
+		cadena = cadena.replace(" ", "").toLowerCase();
+		StringBuilder foo = new StringBuilder(cadena);
+		return cadena.equals(foo.reverse().toString());
+	}
+}

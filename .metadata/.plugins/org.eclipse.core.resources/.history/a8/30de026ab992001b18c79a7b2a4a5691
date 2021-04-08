@@ -1,0 +1,21 @@
+package com.trifulcas.clases;
+
+abstract public class Vehiculo {
+
+	public Vehiculo() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	abstract void sonido();
+
+}
+
+class Coche extends Vehiculo{
+
+	@Override
+	void sonido() {
+		System.out.println("brum burm");
+		
+	}
+	
+}

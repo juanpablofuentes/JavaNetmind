@@ -1,0 +1,26 @@
+package com.trifulcas.testEjercito;
+
+import java.util.Scanner;
+
+import com.trifulcas.ejercitos.Ejercito;
+
+public class Test {
+		static Scanner in;
+	public static void main(String[] args) {
+		in = new Scanner(System.in);
+		System.out.println("Bienvenido al simulador. Vamos a crear un ejército");
+		System.out.println("¿Cuantos soldados quieres?");
+		int soldados = in.nextInt();
+		System.out.println("¿Cuantos lanceros quieres?");
+		int lanceros = in.nextInt();
+		System.out.println("¿Cuantos capitanes quieres?");
+		int capitanes = in.nextInt();
+		Ejercito miEjercito = new Ejercito(soldados, lanceros, capitanes);
+		System.out.println("Ejercito creado con " + soldados + " soldados " + lanceros + " lanceros y " + capitanes
+				+ " capitanes");
+		System.out.println("EL daño total es " + miEjercito.totalDanyo());
+
+		
+	}
+
+}

@@ -1,0 +1,35 @@
+package com.trifulcas.ejemplos;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class EjemplosArrayList {
+
+	public static void main(String[] args) {
+		List<String> alumnos=new ArrayList<String>();
+
+		alumnos.add("Eva");
+		alumnos.add("");
+		alumnos.add("María");
+		alumnos.add("Rosa");
+		
+		Collections.addAll(alumnos, "juan","","Pep");
+		
+		System.out.println(alumnos);
+		
+		List<String> alumnosTrim=arrayTrim(alumnos);
+		
+		System.out.println(alumnosTrim);
+	}
+
+	public static List<String> arrayTrim(List<String> lista){
+		List<String> res=new ArrayList<String>();
+		for(String el:lista) {
+			if (el!="") {
+				res.add(el);
+			}
+		}
+		return res;
+	}
+}

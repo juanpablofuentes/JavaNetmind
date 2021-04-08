@@ -1,0 +1,19 @@
+package com.trifulcas.ejemplos;
+
+public class Palindromo {
+	private String cadena;
+	
+	public Palindromo(String cadena) {
+		this.cadena=cadena;
+	}
+	
+	public boolean esPalindromo() {
+		String cad = normalizar(cadena);
+		StringBuilder foo = new StringBuilder(cad);
+		return cad.equals(foo.reverse().toString())
+	}
+	private String normalizar(String cadena) {
+		return cadena.toLowerCase().replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o")
+				.replace("ú", "u").replace("ü","u").replace(" ", "").replace(".", "").replace(",", "");
+	}
+}

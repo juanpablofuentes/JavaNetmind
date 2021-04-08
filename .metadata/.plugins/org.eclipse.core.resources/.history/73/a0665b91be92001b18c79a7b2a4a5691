@@ -1,0 +1,9 @@
+package com.trifulcas.clases;
+
+public class Sueldo {
+
+	public Sueldo() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

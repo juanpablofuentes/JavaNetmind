@@ -1,0 +1,14 @@
+package com.trifulcas.ejemplos;
+
+public class Cadenas {
+
+	public Cadenas() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

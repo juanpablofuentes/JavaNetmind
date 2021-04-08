@@ -1,0 +1,9 @@
+package com.trifulcas.ejercitos;
+
+public class Ejercito {
+
+	public Ejercito() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.trifulcas.ejemplos;
+
+public class CadenaBuffer {
+
+	public static void main(String[] args) {
+		StringBuffer sb=new StringBuffer("Hola ");  
+		sb.append("que tal");  
+		System.out.println(sb);
+		
+
+	}
+
+}

@@ -1,0 +1,19 @@
+package com.trifulcas.ejemplos;
+
+import java.time.LocalDate;
+import java.util.Scanner;
+
+public class TestFechas {
+
+	public static void main(String[] args) {
+		Scanner in=new Scanner(System.in);
+		System.out.println("Introduce tu fecha de cumpleaños en formato ISO");
+		String f=in.next();
+		LocalDate fecha = LocalDate.parse(f);
+		
+		System.out.println("Naciste en "+fecha.getDayOfWeek());
+		fecha=LocalDate.now();
+		System.out.println();
+	}
+
+}

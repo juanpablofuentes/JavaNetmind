@@ -1,0 +1,26 @@
+package com.trifulcas.pruebas;
+
+import com.trifulcas.clases.Garage;
+import com.trifulcas.clases.Vehiculo;
+
+public class Probador {
+
+	public static void main(String[] args) {
+	
+		String cadena="Hola que tal ";
+		
+		String cadena2="Adios";
+		
+		String cadena3=cadena+cadena2;
+		System.out.println(cadena3);
+		String[] foo=cadena.split(" ");
+		for(int i=0;i<cadena.length();i++) {
+			System.out.println(cadena.charAt(i));
+		}
+		for(String s:foo) {
+			System.out.println(s);
+		}
+		
+	}
+
+}

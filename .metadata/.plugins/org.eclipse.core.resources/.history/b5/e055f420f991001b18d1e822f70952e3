@@ -1,0 +1,9 @@
+package com.trifulcas.clases;
+
+public class Infanteria extends Enemigo {
+
+	public Infanteria() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.trifulcas.ejemplos;
+
+public class EjemplosArrayList {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public static ArrayList<String> arrayTrim(ArrayList<String> lista){
+		List<String> res=new ArrayList<String>();
+		
+	}
+}

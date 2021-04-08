@@ -1,0 +1,6 @@
+package com.trifulcas.ejemplos;
+
+public class ManipulaCadenas {
+	private String cadena;
+	
+}

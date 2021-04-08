@@ -1,0 +1,22 @@
+package com.trifulcas.pruebas;
+
+import java.util.Scanner;
+
+
+public class Probador {
+
+	public static void main(String[] args) {
+	
+		StringBuilder sb=new StringBuilder("Hello ");
+		sb.append("que tal");
+		System.out.println(sb);
+		Scanner in= new Scanner(System.in);
+		try {
+			int a=in.nextInt();
+		} catch(Exception ex) {
+			System.out.println(ex);
+		}
+		
+	}
+
+}

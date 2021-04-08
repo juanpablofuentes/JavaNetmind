@@ -1,0 +1,11 @@
+package com.trifulcas.ejercicio01;
+
+import java.time.LocalDate;
+
+public class Test {
+
+	public static void main(String[] args) {
+	CitasMedico temp=new CitasMedico(LocalDate.now());
+	}
+
+}

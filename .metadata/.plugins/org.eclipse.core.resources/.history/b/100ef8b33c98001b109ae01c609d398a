@@ -1,0 +1,13 @@
+package com.trifulcas.ejercicio01;
+
+public class Test {
+
+	public static void main(String[] args) {
+		ManipulaCadenas temp=new ManipulaCadenas("Hola que tal");
+	
+		ManipulaCadenas numeros=new ManipulaCadenas("123456789");
+		numeros.repetir("");
+		System.out.println(numeros.getCadena());
+	}
+
+}

@@ -1,0 +1,24 @@
+package com.trifulcas.ejercitos;
+
+public class Soldado extends Infanteria {
+
+	public Soldado() {
+		setNombre("Soldado");
+		setFortaleza(50);
+		setDanyo(5);
+		
+	}
+
+	@Override
+	public void cargar() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void retroceder() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

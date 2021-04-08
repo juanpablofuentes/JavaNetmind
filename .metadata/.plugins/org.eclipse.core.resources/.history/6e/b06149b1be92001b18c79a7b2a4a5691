@@ -1,0 +1,23 @@
+package com.trifulcas.clases;
+
+import com.trifulcas.ejercitos.Ejercito;
+
+public class ProbarClases {
+
+	public static void main(String[] args) {
+		
+		Animal[] granja= {new Perro(),new Gato(),new Pato()};
+		Audio[] parque= {new Automovil(), new Monociclo(),new Instrumento()};
+		
+		Financiero[] empresa= {new Banco(),new Sueldo(),new Banco()};
+		
+		Movimiento miCarro=new Automovil();
+		
+		for(Animal animal:granja) {
+			animal.sonido();
+		}
+		for(Audio vehiculo:parque) {
+			vehiculo.sonido();
+		}
+	}
+}

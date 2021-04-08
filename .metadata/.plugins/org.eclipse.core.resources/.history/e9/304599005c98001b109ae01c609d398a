@@ -1,0 +1,10 @@
+package com.trifulcas.ejemplos;
+
+public class ResumenColecciones {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

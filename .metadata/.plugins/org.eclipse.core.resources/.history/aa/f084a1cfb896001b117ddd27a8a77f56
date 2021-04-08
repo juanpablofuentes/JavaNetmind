@@ -1,0 +1,15 @@
+package com.trifulcas.ejemplos;
+
+public class Ejercicios {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public static bool esPalindromo(String cadena) {
+		cadena=cadena.replaceAll(" ", "").toLowerCase();
+		StringBuilder foo=new StringBuilder(cadena);
+		return cadena.equals(foo.reverse().toString());
+	}
+}

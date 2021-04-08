@@ -1,0 +1,9 @@
+package com.trifulcas.clases;
+
+public class Banco {
+
+	public Banco() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,19 @@
+package com.trifulcas.ejercicio01;
+
+import java.time.LocalDate;
+
+public class CitasMedico {
+	private LocalDate[] fechas;
+
+	void CitasMedico() {
+
+	}
+
+	void CitasMedico(String fecha) {
+
+	}
+
+	void CitasMedico(LocalDate fecha) {
+
+	}
+}

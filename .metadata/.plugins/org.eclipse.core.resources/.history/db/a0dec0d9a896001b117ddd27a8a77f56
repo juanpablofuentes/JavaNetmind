@@ -1,0 +1,54 @@
+package com.trifulcas.ejercitos;
+
+public class Ejercito {
+
+	private Infanteria[] infanteria;
+
+	public Ejercito() {
+		infanteria = new Infanteria[15];
+		for (int i = 0; i < 10; i++) {
+			infanteria[i] = new Soldado();
+		}
+		for (int i = 10; i < 14; i++) {
+			infanteria[i] = new Lancero();
+		}
+		infanteria[14] = new Capitan();
+
+	}
+
+	public Ejercito(int a) {
+
+	}
+
+	public int totalDanyo() {
+		int total = 0;
+		for (Infanteria unidad : infanteria) {
+			total += unidad.getDanyo();
+		}
+		return total;
+	}
+
+	public void aLaCarga() {
+		for (Infanteria unidad : infanteria) {
+			if (unidad.getDanyo() > 0) {
+				unidad.cargar();
+				// Compruebo si unidad es una instancia de Lancero
+				if (unidad instanceof Lancero) {
+					// Conversión implícita 'al vuelo'
+					((Lancero) unidad).ataqueLanza();
+
+					// Implícita sin hacerlo al vuelo
+					// Lancero temp=(Lancero) unidad;
+					// temp.ataqueLanza();
+				}
+			}
+		}
+		System.out.println("Total daño: " + totalDanyo());
+	}
+
+	public void retirada() {
+		for (Infanteria unidad : infanteria) {
+			unidad.retroceder();
+		}
+	}
+}

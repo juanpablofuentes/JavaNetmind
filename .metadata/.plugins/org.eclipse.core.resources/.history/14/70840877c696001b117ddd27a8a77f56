@@ -1,0 +1,111 @@
+package com.trifulcas.ejemplos;
+
+import java.time.DayOfWeek;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.Month;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalAdjusters;
+
+public class Fechas {
+
+	public static void main(String[] args) {
+
+		// Para crear una variable que permita guardar una fecha usamos
+		// LocalDate
+		// fecha Tiene el día de hoy LocalDate tiene algunos métodos estáticos
+		// Y uno de ellos es now() que nos devuelve la fecha de hoy
+		LocalDate fecha = LocalDate.now();
+		// Otra manera de crear una fecha es utilizar of
+		// Usa de parámetros: año, mes y día
+		LocalDate fecha2 = LocalDate.of(2019, 02, 20);
+		// Otra manera más es utilizar parse que intenta convertir
+		// Una cadena en una fecha
+		LocalDate fecha3 = LocalDate.parse("2015-08-10");
+
+		System.out.println(fecha);
+		// Imprimir en formato ISO (estándar, como el mysql)
+		System.out.println(fecha.format(DateTimeFormatter.ISO_DATE));
+		System.out.println(fecha.format(DateTimeFormatter.ISO_LOCAL_DATE));
+		// Formatear con un patrón definido (dd-MM-yyy)
+		System.out.println(fecha.format(DateTimeFormatter.ofPattern("dd-MM-yyy")));
+		// Formatear como lo tengamos configurado en el sistema (y tenemos largo, medio
+		// o corto)
+		System.out.println(fecha.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL)));
+		System.out.println(fecha.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM)));
+		System.out.println(fecha.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT)));
+
+		System.out.println(fecha2);
+		System.out.println(fecha3);
+
+		// A una fecha le puedo añadir o quitar días, meses, semanas y años
+		LocalDate manyana = LocalDate.now().plusDays(1);
+		LocalDate ayer = LocalDate.now().minusDays(1);
+		LocalDate semana_que_viene = LocalDate.now().plusWeeks(1);
+		System.out.println(manyana);
+		System.out.println(ayer);
+		System.out.println(semana_que_viene);
+
+		// Puedo añadir o restar unidades de tiempo
+		LocalDate mesAnterior = LocalDate.now().minus(1, ChronoUnit.MONTHS);
+		// Podemos añadir Periodos que es parecido: permite añadir
+		// meses, dias, años o combinaciones
+		LocalDate finalDate = manyana.plus(Period.ofDays(5));
+
+		System.out.println(finalDate);
+		System.out.println(mesAnterior);
+
+		// Puedo obtener de una fecha cualquier valor que me interese
+		// El día de la semana es una clase que nos permite obtener el nombre
+		// Y el número
+		DayOfWeek dia = LocalDate.parse("2016-06-12").getDayOfWeek();
+		// El día del mes es un entero
+		int mes = LocalDate.parse("2016-06-12").getDayOfMonth();
+
+		// En el caso de los meses
+		int m = LocalDate.parse("2016-06-12").getMonthValue();
+		Month mon = LocalDate.parse("2016-06-12").getMonth();
+
+		// Las clases DayOfWeek y Month nos permiten recuperar el nombre
+		// Del día de la semana y del mes (en inglés) pero también
+		// Su número
+		System.out.println(dia);
+		System.out.println(dia.ordinal());
+		System.out.println(mes);
+		System.out.println(m);
+		System.out.println(mon);
+		System.out.println(mon.ordinal());
+
+		// Saber si un año es bisiesto
+		boolean bisiesto = LocalDate.now().isLeapYear();
+		System.out.println(bisiesto);
+		boolean antes = LocalDate.parse("2016-06-12").isBefore(LocalDate.parse("2016-06-11"));
+		System.out.println(antes);
+		boolean despues = LocalDate.parse("2016-06-12").isAfter(LocalDate.parse("2016-06-11"));
+		System.out.println(despues);
+		// El with nos permite obtener el primer día y el último del mes
+		LocalDate primerDiaMes = LocalDate.parse("2016-06-12").with(TemporalAdjusters.firstDayOfMonth());
+		System.out.println(primerDiaMes);
+
+		// Formato de fecha Y hora
+		LocalDateTime fechaHora = LocalDateTime.parse("2016-06-12T10:00");
+		System.out.println(fechaHora);
+		System.out.println(fechaHora.format(DateTimeFormatter.ofPattern("dd-MM-yyy H:m")));
+		LocalDateTime inicioDia = LocalDate.parse("2016-06-12").atStartOfDay();
+		System.out.println(inicioDia);
+
+		LocalTime ahora = LocalTime.now();
+
+		LocalTime seisYMedia = LocalTime.parse("06:30");
+		LocalTime seisYMedia2 = LocalTime.of(6, 30);
+		LocalTime sieteYMedia = LocalTime.parse("06:30").plus(1, ChronoUnit.HOURS);
+		LocalTime siete = seisYMedia.plus(Duration.ofMinutes(30));
+
+	}
+
+}

@@ -1,0 +1,39 @@
+package com.trifulcas.ejemplos;
+
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.Scanner;
+
+public class TestFechas {
+
+	public static void main(String[] args) {
+		Scanner in=new Scanner(System.in);
+		
+		// ¿En qué día caen los primeros de cada mes este año?
+		for(int i=1;i<12;i++) {
+			LocalDate fecha= LocalDate.of(2021, i, 1);
+			System.out.println(fecha.getDayOfWeek());
+			System.out.println(finDeSemana(fecha));
+		}
+		
+		System.out.println("Introduce fecha factura");
+		String f=in.next();
+		System.out.println("El vencimiento es dentro de 15 días:");
+		LocalDate fecha=LocalDate.parse(f).plusDays(15);
+		System.out.println(fecha.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL)));
+		
+	}
+	
+	// Función que nos diga si un dá concreto es un fin de semana
+	
+	public static boolean finDeSemana(LocalDate fecha) {
+		return fecha.getDayOfWeek()==DayOfWeek.SATURDAY ||
+				fecha.getDayOfWeek()==DayOfWeek.SUNDAY;
+	}
+	public static int dia(LocalDate fecha) {
+		return fecha.getDayOfMonth();
+	}
+
+}

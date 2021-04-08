@@ -1,0 +1,14 @@
+package com.trifulcas.clases;
+
+import com.trifulcas.ejercitos.Soldado;
+
+public class ProbarClases {
+
+	public static void main(String[] args) {
+
+		Soldado pepe=new Soldado();
+		
+		System.out.println(pepe.getNombre());
+	}
+
+}

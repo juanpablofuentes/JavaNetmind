@@ -1,0 +1,6 @@
+package com.trifulcas.ejercicio01;
+
+public class CitasMedico {
+	private LocalDate[] fechas;
+	
+}

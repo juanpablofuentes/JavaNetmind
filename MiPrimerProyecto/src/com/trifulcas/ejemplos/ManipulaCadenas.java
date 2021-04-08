@@ -1,0 +1,33 @@
+package com.trifulcas.ejemplos;
+
+public class ManipulaCadenas {
+	private String cadena;
+
+	public ManipulaCadenas(String cadena) {
+		this.cadena = cadena;
+	}
+
+	/**
+	 * @return the cadena
+	 */
+	public String getCadena() {
+		return cadena;
+	}
+	
+	public void repetir(String cadena) {
+		//Averiguar si la cadena que me pasan como parámetro
+		// Está dentro de la cadena de la clase
+		// Si no está no hago nada
+		// Si está inserto la cadena que me pasan en la posición
+		// de la cadena
+	}
+	public void erosionar() {
+		// Compruebo si tiene longitud>2
+		//Si es así quito el caracter 1º y último
+	}
+	public void agujero() {
+		// Par o impar
+		// Si es par quitar los caracteres del medio
+		// Si es impar quitar el carácter del medio
+	}
+}

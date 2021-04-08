@@ -1,0 +1,18 @@
+package com.trifulcas.HibernatePrueba;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+public class Country {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int country_id;
+	
+	private String first_name;
+	public Country() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

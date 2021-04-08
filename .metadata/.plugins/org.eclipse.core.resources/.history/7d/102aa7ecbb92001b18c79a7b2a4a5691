@@ -1,0 +1,9 @@
+package com.trifulcas.clases;
+
+public class Instrumento {
+
+	public Instrumento() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

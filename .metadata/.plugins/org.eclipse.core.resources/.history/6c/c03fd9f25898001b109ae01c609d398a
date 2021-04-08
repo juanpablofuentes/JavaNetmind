@@ -1,0 +1,15 @@
+package com.trifulcas.ejemplos;
+
+import java.util.Map;
+
+public class EjemplosHashMap {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	public static Alumno mejorAlumno(Map<String,Alumno> alumno) {
+		
+	}
+}

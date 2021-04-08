@@ -1,0 +1,14 @@
+package com.trifulcas.clases;
+
+import com.trifulcas.ejercitos.Ejercito;
+
+public class ProbarClases {
+
+	public static void main(String[] args) {
+		Ejercito romanos = new Ejercito();
+		
+		romanos.aLaCarga();
+		romanos.retirada();
+	}
+
+}
