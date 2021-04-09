@@ -6,7 +6,7 @@ import java.util.List;
 public class Alumno {
 	private String nombre;
 	private int nota;
-	private List<Integer> notas=new ArrayList<Integer>();
+	private List<Integer> notas;
 	
 	
  	public Alumno(String nombre, int nota) {

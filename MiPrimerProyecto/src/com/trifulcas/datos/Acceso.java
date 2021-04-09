@@ -24,6 +24,9 @@ public class Acceso {
 						rs.getInt("actor_id") + "  " + rs.getString("first_name") + "  " + rs.getString("last_name"));
 			}
 
+			int result=stmt.executeUpdate("insert into actor (first_name, last_name) values ('Eva','Pi')");  
+			System.out.println(result+" filas afectadas");
+
 			PreparedStatement ps = con.prepareStatement("select * from actor where first_name like ?");
 			ps.setString(1, "%ar%");
 			rs = ps.executeQuery();
@@ -31,8 +34,6 @@ public class Acceso {
 				System.out.println(
 						rs.getInt("actor_id") + "  " + rs.getString("first_name") + "  " + rs.getString("last_name"));
 			}
-//			int result=stmt.executeUpdate("insert into actor (first_name, last_name) values ('Eva','Pi')");  
-			// System.out.println(result+" records affected");
 			con.close();
 
 		} catch (Exception ex) {

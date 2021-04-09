@@ -19,7 +19,7 @@ public class EjemplosHashMap {
 		System.out.println(mejorAlumno(alumnos));
 		System.out.println(aprobados(alumnos));
 		
-		Set<String> claves=alumnos.keySet();
+		
 		
 		
 	}

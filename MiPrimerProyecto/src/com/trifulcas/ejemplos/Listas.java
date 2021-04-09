@@ -34,7 +34,7 @@ public class Listas {
 		// Al imprimir se muestra de una manera bastante visual
 		System.out.println(lista);
 
-		// Con get obtenemos el elemnto en esa posición
+		// Con get obtenemos el elemento en esa posición
 		System.out.println(lista.get(0));
 
 		// Cambiar el elemento que está en una posición determinada

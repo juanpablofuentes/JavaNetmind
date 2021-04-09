@@ -8,34 +8,38 @@ public class Test {
 	static Scanner in;
 
 	public static void main(String[] args) {
-		in = new Scanner(System.in);
-		System.out.println("Bienvenido al simulador. Vamos a crear un ejército");
-		System.out.println("¿Cuantos soldados quieres?");
-		int soldados = in.nextInt();
-		System.out.println("¿Cuantos lanceros quieres?");
-		int lanceros = in.nextInt();
-		System.out.println("¿Cuantos capitanes quieres?");
-		int capitanes = in.nextInt();
-		Ejercito miEjercito = new Ejercito(soldados, lanceros, capitanes);
-		System.out.println("Ejercito creado con " + soldados + " soldados " + lanceros + " lanceros y " + capitanes
-				+ " capitanes");
-		System.out.println("El daño total es " + miEjercito.totalDanyo());
-		int respuesta;
-		do {
-			respuesta = menu("¿Qué quieres hacer?\r\n" + "1- Atacar\r\n" + "2.- Retirada\r\n" + "0.- Salir");
-			if (respuesta == 1) {
-				atacar(miEjercito);
-			} else if (respuesta == 2) {
-				retroceder(miEjercito);
-			} else if (respuesta != 0) {
-				System.out.println("Los valores válidos son 1,2 y 0");
-			}
-		} while (respuesta != 0);
+		try {
+			in = new Scanner(System.in);
+			System.out.println("Bienvenido al simulador. Vamos a crear un ejército");
+			System.out.println("¿Cuantos soldados quieres? (máximo 100)");
+			int soldados = getNumero(100);
+			System.out.println("¿Cuantos lanceros quieres?  (máximo 100)");
+			int lanceros = getNumero(100);
+			System.out.println("¿Cuantos capitanes quieres? (máximo 100)");
+			int capitanes = getNumero(100);
+			Ejercito miEjercito = new Ejercito(soldados, lanceros, capitanes);
+			System.out.println("Ejercito creado con " + soldados + " soldados " + lanceros + " lanceros y " + capitanes
+					+ " capitanes");
+			System.out.println("El daño total es " + miEjercito.totalDanyo());
+			int respuesta;
+			do {
+				respuesta = menu("¿Qué quieres hacer?\r\n" + "1- Atacar\r\n" + "2.- Retirada\r\n" + "0.- Salir");
+				if (respuesta == 1) {
+					atacar(miEjercito);
+				} else if (respuesta == 2) {
+					retroceder(miEjercito);
+				} else if (respuesta != 0) {
+					System.out.println("Los valores válidos son 1,2 y 0");
+				}
+			} while (respuesta != 0);
+		} catch (Exception ex) {
+			System.out.println("Error");
+		}
 	}
 
 	public static int menu(String texto) {
 		System.out.println(texto);
-		int respuesta = in.nextInt();
+		int respuesta = getNumero(2);
 		return respuesta;
 	}
 
@@ -49,7 +53,7 @@ public class Test {
 				miEjercito.aLaCarga();
 			} else if (respuesta == 2) {
 				System.out.println("¿Con qué unidad quieres atacar (1-" + miEjercito.getTotalUnidades() + ") ?");
-				int unidad = in.nextInt();
+				int unidad = getNumero(miEjercito.getTotalUnidades());
 				if (unidad >= 1 && unidad <= miEjercito.getTotalUnidades()) {
 					miEjercito.getUnidad(unidad - 1).cargar();
 				} else {
@@ -73,9 +77,9 @@ public class Test {
 				;
 			} else if (respuesta == 2) {
 				System.out.println("¿Con qué unidad quieres retroceder (1-" + miEjercito.getTotalUnidades() + ") ?");
-				int unidad = in.nextInt();
+				int unidad = getNumero(miEjercito.getTotalUnidades());
 				if (unidad >= 1 && unidad <= miEjercito.getTotalUnidades()) {
-					miEjercito.getUnidad(unidad-1).retroceder();
+					miEjercito.getUnidad(unidad - 1).retroceder();
 				} else {
 					System.out.println("Unidad fuera de rango");
 				}
@@ -83,5 +87,29 @@ public class Test {
 				System.out.println("Los valores válidos son 1,2 y 0");
 			}
 		} while (respuesta != 0);
+	}
+
+	public static int getNumero(int max) {
+		boolean ok = true;
+		int num = 0;
+		do {
+			try {
+				ok = true;
+				num = in.nextInt();
+				if (num<0) {
+					System.out.println("No valen números negativos");
+					ok=false;
+				}
+				if (num>max) {
+					System.out.println("No valen números mayores de "+max);
+					ok=false;
+				}
+			} catch (Exception ex) {
+				System.out.println("Debe introducir un número");
+				in.nextLine();
+				ok = false;
+			}
+		} while (!ok);
+		return num;
 	}
 }
