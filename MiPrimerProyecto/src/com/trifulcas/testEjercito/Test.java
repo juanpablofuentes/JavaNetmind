@@ -74,7 +74,7 @@ public class Test {
 
 			if (respuesta == 1) {
 				miEjercito.retirada();
-				;
+				
 			} else if (respuesta == 2) {
 				System.out.println("¿Con qué unidad quieres retroceder (1-" + miEjercito.getTotalUnidades() + ") ?");
 				int unidad = getNumero(miEjercito.getTotalUnidades());

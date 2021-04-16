@@ -1,9 +1,0 @@
-package com.trifulcas.HibernatePrueba;
-
-public class FilmActor {
-
-	public FilmActor() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

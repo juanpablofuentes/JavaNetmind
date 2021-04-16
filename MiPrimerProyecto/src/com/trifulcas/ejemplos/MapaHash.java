@@ -6,7 +6,6 @@ import java.util.Map;
 public class MapaHash {
 
 	public static void main(String[] args) {
-		
 		// Especificar los tipos de los dos cmapos, la clave y el valor
 		// Defino por la intefaz 'Map' y no pr HashMap
 		Map<Integer, String> map = new HashMap<Integer, String>();// Creating HashMap
@@ -17,9 +16,9 @@ public class MapaHash {
 		// En formato clave, valor
 		map.put(1, "Eva"); // Put elements in Map
 		map.put(2, "Juan");
-		map.put(3, "Ana");
+		map.put(30, "Ana");
 		map.put(4, "Pep"); //{1=Eva, 2=Juan, 3=Ana, 4=Rosa}
-
+		map.put(234, "Rosa");
 		System.out.println(map);
 		
 		// Recorrer un HashMap
@@ -27,6 +26,13 @@ public class MapaHash {
 			System.out.println(m.getKey() + " " + m.getValue());
 		}
 		
+		for(String valor:map.values()) {
+			System.out.println(valor);
+		}
+		
+		for(Integer valor:map.keySet()) {
+			System.out.println(valor);
+		}
 		// Añado un valor que ya existe	
 		// Lo sustituye
 		map.put(4, "Rosa");
@@ -54,6 +60,7 @@ public class MapaHash {
 		mapa.put("Eva", new Alumno("Eva González",8));
 		mapa.put("Pep", new Alumno("José Bou",6));
 		
+		
 		// Obtener un valor concreto de una clave
 		System.out.println(mapa.get("Ana"));
 		
@@ -73,6 +80,11 @@ public class MapaHash {
 		for(String key:mapa.keySet()) {
 			System.out.println(key);
 		}
+		
+		mapa.containsKey("Ana");
+		mapa.containsValue(new Alumno("w",2));
+		
+		
 	}
 
 }

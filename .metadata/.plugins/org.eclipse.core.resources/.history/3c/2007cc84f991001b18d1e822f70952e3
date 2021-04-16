@@ -1,9 +1,0 @@
-package com.trifulcas.ejercitos;
-
-public class Arqueros extends Enemigo {
-
-	public Arqueros() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

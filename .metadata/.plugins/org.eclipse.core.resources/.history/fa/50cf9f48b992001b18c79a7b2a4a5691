@@ -1,9 +1,0 @@
-package com.trifulcas.clases;
-
-public class Vehiculos {
-
-	public Vehiculos() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

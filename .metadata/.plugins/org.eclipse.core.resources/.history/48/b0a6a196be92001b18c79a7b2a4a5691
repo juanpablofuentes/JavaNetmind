@@ -1,9 +1,0 @@
-package com.trifulcas.clases;
-
-public class Sueldo implements Financiero {
-
-	public Sueldo() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

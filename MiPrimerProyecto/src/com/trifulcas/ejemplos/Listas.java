@@ -50,7 +50,7 @@ public class Listas {
 		System.out.println(lista);
 		lista.add("Eva");
 		lista.add("Juan");
-		lista.add(10, "Ana");
+		//lista.add(10, "Ana");
 		
 		// Recorrer con un foreach
 		for (String l : lista) {
@@ -70,6 +70,8 @@ public class Listas {
 		System.out.println(lista.indexOf("Rosa")); // -1
 		// Podemos ordenar usando la utilidad sort de la clase Collections
 		Collections.sort(lista);
+		System.out.println(lista);
+		Collections.shuffle(lista);
 		System.out.println(lista);
 		
 	}

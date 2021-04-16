@@ -3,6 +3,9 @@ package com.trifulcas.ejemplos;
 public class Cadenas {
 
 	public static void main(String[] args) {
+		
+	
+		
 		String s = "JavadesdeCero";
 		// o String s= new String ("JavadesdeCero");
 		// Devuelve la cantidad de caracteres en la Cadena.
@@ -54,7 +57,20 @@ public class Cadenas {
 		System.out.println("String Original: " + str1);
 		String str2 = "YavadesdeCero".replace('Y', 'J');
 		System.out.println("Reemplazando Y por J -> " + str2);
-
+		
+		System.out.println(veces("a","holA qaue tal"));
 	}
 
+	public static int veces(String aguja, String pajar) {
+		aguja=aguja.toLowerCase();
+		pajar=pajar.toLowerCase();
+		int pos=pajar.indexOf(aguja);
+		int cont=0;
+		while(pos!=-1) {
+			cont++;
+			pos=pajar.indexOf(aguja,pos+1);
+		}
+		return cont;
+	}
+	
 }

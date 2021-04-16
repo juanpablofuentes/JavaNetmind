@@ -27,15 +27,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.trifulcas.AppWeb"/>
-			<item value="com.trifulcas.HibernatePrueba"/>
 		</list>
 		<list key="groupId">
-			<item value="com.trifulcas"/>
 		</list>
 		<list key="artifactId">
-			<item value="AppWeb"/>
-			<item value="HibernatePrueba"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

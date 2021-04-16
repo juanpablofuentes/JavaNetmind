@@ -1,9 +1,0 @@
-package com.trifulcas.ejemplos;
-
-public class Palindromo {
-	private String cadena;
-	
-	public Palindromo(String cadena) {
-		this.cadena=cadena;
-	}
-}

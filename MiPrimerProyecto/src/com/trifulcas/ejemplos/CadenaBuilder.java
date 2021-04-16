@@ -27,6 +27,16 @@ public class CadenaBuilder {
 		nombre = temp.reverse().toString();
 		System.out.println(nombre);
 		
-		
+		System.out.println(duplicar("que","hola que tal que"));
+		System.out.println(duplicar("a","hola que tal que"));
+	}
+	public static String duplicar(String aguja, String pajar) {
+		StringBuilder temp=new StringBuilder(pajar);
+		int pos=pajar.indexOf(aguja);
+		while (pos!=-1) {
+			temp.insert(pos, aguja);
+			pos=temp.indexOf(aguja,pos+1+aguja.length());
+		}
+		return temp.toString();
 	}
 }

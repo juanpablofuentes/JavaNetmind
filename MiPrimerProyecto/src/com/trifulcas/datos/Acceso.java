@@ -23,8 +23,8 @@ public class Acceso {
 				System.out.println(
 						rs.getInt("actor_id") + "  " + rs.getString("first_name") + "  " + rs.getString("last_name"));
 			}
-
-			int result=stmt.executeUpdate("insert into actor (first_name, last_name) values ('Eva','Pi')");  
+			String apellido="');delete * from actor where (1=1";
+			int result=stmt.executeUpdate("insert into actor (first_name, last_name) values ('Eva','"+apellido+"')");  
 			System.out.println(result+" filas afectadas");
 
 			PreparedStatement ps = con.prepareStatement("select * from actor where first_name like ?");

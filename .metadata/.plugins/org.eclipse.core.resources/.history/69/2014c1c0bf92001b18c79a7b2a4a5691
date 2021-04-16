@@ -1,6 +1,0 @@
-package com.trifulcas.clases;
-
-public interface Financiero {
-	double interes();
-	double irpf();
-}

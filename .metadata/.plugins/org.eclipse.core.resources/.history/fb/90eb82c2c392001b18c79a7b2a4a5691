@@ -1,9 +1,0 @@
-package com.trifulcas.clases;
-
-public class Broker {
-
-	public Broker() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

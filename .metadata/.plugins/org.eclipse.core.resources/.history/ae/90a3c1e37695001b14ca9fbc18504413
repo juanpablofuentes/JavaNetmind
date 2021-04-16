@@ -1,9 +1,0 @@
-package com.trifulcas.HibernatePrueba;
-
-public class LeerPaises {
-
-	public LeerPaises() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
