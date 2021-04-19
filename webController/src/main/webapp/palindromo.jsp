@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Formulario</title>
+<title>Insert title here</title>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -20,14 +20,25 @@
 <!-- Latest compiled JavaScript -->
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="zstyle.css">
 </head>
 <body>
-
-	<form action="recibir.jsp">
-		Nombre: <input type="text" name="nombre"> Email: <input
-			type="text" name="email"> <input type="submit">
+	<form>
+		<div class="form-group">
+			<label for="cadena">Introduce la cadena</label> <input type="text"
+				class="form-control" placeholder="introduce cadena" name="cadena">
+			<button type="submit" class="btn btn-primary">Enviar</button>
+		</div>
+		<%
+		String pal = request.getAttribute("palindromo").toString();
+		boolean palindromo = Boolean.parseBoolean(pal);
+		out.print(pal);
+		out.print(palindromo);
+		if (palindromo) {
+		%>
+		<h2>Es palindromo</h2>
+		<%
+		}
+		%>
 	</form>
-
 </body>
 </html>

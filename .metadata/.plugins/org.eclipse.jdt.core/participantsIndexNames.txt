@@ -5,6 +5,8 @@ C:\Users\JuanPi\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\js
 \webHolaMundo\src\main\java
 C:\Users\JuanPi\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4026087611.index
 \miWeb\src\main\java
+C:\Users\JuanPi\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3404625869.index
+\webController\src\main\java
 C:\Users\JuanPi\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3040455524.index
 \JavaWeb\src\main\java
 C:\Users\JuanPi\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3965023617.index
