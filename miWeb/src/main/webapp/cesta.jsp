@@ -12,6 +12,7 @@
 	String nombre = (String) session.getAttribute("usuario");
 	out.print("<h1>Cesta de " + nombre + "</h1>");
 	%>
+	
 	<h2><%= LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyy HH:mm")) %></h2>
 	
 	<%@ include file="footer.jsp" %>  

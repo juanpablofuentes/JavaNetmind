@@ -7,6 +7,7 @@
 <title>Recuperar datos</title>
 </head>
 <body>
+<h1>${param.nombre }</h1>
 	<%
 	String nombre = request.getParameter("nombre");
 	out.print("Hola " + nombre);
