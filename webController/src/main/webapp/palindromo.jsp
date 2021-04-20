@@ -31,8 +31,6 @@
 		<%
 		String pal = request.getAttribute("palindromo").toString();
 		boolean palindromo = Boolean.parseBoolean(pal);
-		out.print(pal);
-		out.print(palindromo);
 		if (palindromo) {
 		%>
 		<h2>Es palindromo</h2>

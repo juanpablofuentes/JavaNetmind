@@ -23,44 +23,9 @@
 <link rel="stylesheet" type="text/css" href="zstyle.css">
 </head>
 <body>
-
-
-	<%
-	int num1 = (int) Math.floor(Math.random() * 2) + 1;
-	int num2 = (int) Math.floor(Math.random() * 2) + 1;
-
-	String moneda1 = num1 == 1 ? "cara" : "cruz";
-	String moneda2 = num2 == 1 ? "cara" : "cruz";
-	%>
-	<h1>
-		Juego de las monedas <img src="img/cara.png" />
-	</h1>
-	<h1>¡Lanza la monedas!</h1>
-	<p>
-		<%
-		if (num1 == 1) {
-		%>
-		<img src="img/cara.png">
-		<%
-		} else {
-		%>
-		<img src="img/cruz.png">
-		<%
-		}
-		%>
-		<img src="img/<%=moneda2%>.png">
-	</p>
-	<%
-	String mensaje = "";
-	if (num1 == num2) {
-		mensaje = "Has ganado";
-	} else {
-		mensaje = "Has perdido";
-	}
-	%>
-	<h2><%=mensaje%></h2>
-	
-	<a href="index.jsp" class="btn btn-primary">Volver a tirar</a>
-	<script src="js/codigo.js"></script>
+<h1>Bienvenido a las utilidades maravillosas del ejercicio</h1>
+<h2><a href="tabla.jsp">Tabla de multiplicar</a></h2>
+<h2><a href="mayor.jsp">Mayor y menor</a></h2>
+<h2><a href="palindromo.jsp">¿Es palíndromo?</a></h2>
 </body>
 </html>

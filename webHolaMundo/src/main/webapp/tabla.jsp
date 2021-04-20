@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Tirar Monedas</title>
+<title>Tabla de multiplicar</title>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -23,44 +23,31 @@
 <link rel="stylesheet" type="text/css" href="zstyle.css">
 </head>
 <body>
+<%
+String numero=request.getParameter("numero");
+%>
 
-
-	<%
-	int num1 = (int) Math.floor(Math.random() * 2) + 1;
-	int num2 = (int) Math.floor(Math.random() * 2) + 1;
-
-	String moneda1 = num1 == 1 ? "cara" : "cruz";
-	String moneda2 = num2 == 1 ? "cara" : "cruz";
-	%>
-	<h1>
-		Juego de las monedas <img src="img/cara.png" />
-	</h1>
-	<h1>¡Lanza la monedas!</h1>
-	<p>
-		<%
-		if (num1 == 1) {
-		%>
-		<img src="img/cara.png">
-		<%
-		} else {
-		%>
-		<img src="img/cruz.png">
-		<%
-		}
-		%>
-		<img src="img/<%=moneda2%>.png">
-	</p>
-	<%
-	String mensaje = "";
-	if (num1 == num2) {
-		mensaje = "Has ganado";
-	} else {
-		mensaje = "Has perdido";
-	}
-	%>
-	<h2><%=mensaje%></h2>
+ <form>
+  <div class="form-group">
+    <label for="numero">Número:</label>
+    <input type="number" class="form-control" placeholder="Introduce el número" name="numero"
+    value="<%=numero!=null?numero:"" %>" >
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form> 
 	
-	<a href="index.jsp" class="btn btn-primary">Volver a tirar</a>
-	<script src="js/codigo.js"></script>
+<%
+
+if (numero!=null && !numero.equals("") && numero.chars().allMatch(Character::isDigit)){
+	int num=Integer.parseInt(numero);
+	for(int i=1;i<=10;i++){
+	//	out.println("<p>"+i+" x "+num+" = "+(i*num)+"</p>");
+		%>
+		<p><%=i%> x <%=num %> = <%=(i*num) %></p>
+		<%
+	}
+}
+
+%>
 </body>
 </html>
