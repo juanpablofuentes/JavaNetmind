@@ -22,6 +22,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
+<a href="./tabla">Tabla multiplicar</a>
 	<form>
 		<div class="form-group">
 			<label for="cadena">Introduce la cadena</label> <input type="text"
@@ -30,13 +31,8 @@
 		</div>
 		<%
 		String pal = request.getAttribute("palindromo").toString();
-		boolean palindromo = Boolean.parseBoolean(pal);
-		if (palindromo) {
 		%>
-		<h2>Es palindromo</h2>
-		<%
-		}
-		%>
+		<h2><%=pal %></h2>
 	</form>
 </body>
 </html>

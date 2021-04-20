@@ -24,18 +24,8 @@
 </head>
 <body>
 <%
-String numero=request.getParameter("numero");
-
-String nombre=(String) session.getAttribute("nombre");
-Integer intentos=(Integer)session.getAttribute("intentos");
-Integer global=(Integer)application.getAttribute("global");
-
-if(nombre==null){
-	response.sendRedirect("login.jsp");
-}
+String numero=(String)request.getAttribute("numero");
 %>
-<h1>Hola <%=nombre %> tienes <%=intentos %> intentos</h1>
-<p>Variable global <%=global %>
  <form>
   <div class="form-group">
     <label for="numero">Número:</label>

@@ -36,6 +36,7 @@
 		Juego de las monedas <img src="img/cara.png" />
 	</h1>
 	<h1>¡Lanza la monedas!</h1>
+	<a href="./menu">O pincha aquí si quieres ver el delicioso menú del día</a>
 	<p>
 		<%
 		if (num1 == 1) {

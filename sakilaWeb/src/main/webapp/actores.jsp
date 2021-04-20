@@ -43,7 +43,7 @@
 			<c:forEach var="actor" items="${actores}">
 
 				<tr>
-					<td><c:out value="${actor.actor_id}" /> %></td>
+					<td><c:out value="${actor.actor_id}" /></td>
 					<td><c:out value="${actor.first_name}" /></td>
 					<td><c:out value="${actor.last_name}" /></td>
 					<td><c:out value="${actor.last_update}" /></td>

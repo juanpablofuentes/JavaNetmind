@@ -20,7 +20,7 @@
 <!-- Latest compiled JavaScript -->
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="zstyle.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <!-- Recuperar el nombre y la contraseña. Si es admin admin ir a otra página -->
@@ -29,7 +29,16 @@
 String nombre=request.getParameter("nombre");
 String pwd=request.getParameter("pwd");
 
+
+
 if (nombre!=null && pwd!=null && nombre.equals("admin") && pwd.equals("admin")){
+	// Estas variables son accesibles desde cualquier página
+	session.setAttribute("nombre", nombre);
+	session.setAttribute("saludo", "hola que tal");
+	session.setAttribute("intentos", 5);
+	
+	application.setAttribute("global", 27);
+	
 	response.sendRedirect("panel.jsp");
 }
 %>
