@@ -20,23 +20,23 @@
 <!-- Latest compiled JavaScript -->
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="zstyle.css">
+<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
-
-
 	<%
 	int num1 = (int) Math.floor(Math.random() * 2) + 1;
 	int num2 = (int) Math.floor(Math.random() * 2) + 1;
 
 	String moneda1 = num1 == 1 ? "cara" : "cruz";
 	String moneda2 = num2 == 1 ? "cara" : "cruz";
+	System.out.print(moneda1);
 	%>
 	<h1>
 		Juego de las monedas <img src="img/cara.png" />
 	</h1>
 	<h1>¡Lanza la monedas!</h1>
-	<a href="./menu">O pincha aquí si quieres ver el delicioso menú del día</a>
+	<a href="./menu">O pincha aquí si quieres ver el delicioso menú del
+		día</a>
 	<p>
 		<%
 		if (num1 == 1) {
@@ -60,7 +60,9 @@
 	}
 	%>
 	<h2><%=mensaje%></h2>
-	
+	<form action="./menu" method="post">
+		<input type="submit">
+	</form>
 	<a href="index.jsp" class="btn btn-primary">Volver a tirar</a>
 	<script src="js/codigo.js"></script>
 </body>

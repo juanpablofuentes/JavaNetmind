@@ -1,6 +1,7 @@
 package com.trifulcas.controlador;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -39,7 +40,14 @@ public class Menu extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		int res=0;
+		for (int i=0;i<10000;i++) {
+			res+=i;
+		}
+		response.setContentType("text/html");//setting the content type  
+		PrintWriter pw=response.getWriter();
+		pw.print("<h1>"+res+"</h1>");
+		pw.close();
 	}
 
 }

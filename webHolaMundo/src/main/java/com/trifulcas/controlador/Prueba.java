@@ -28,8 +28,8 @@ public class Prueba extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("resultado", "Es palíndromo");
-		RequestDispatcher dispatcher = request.getRequestDispatcher("pepito.jsp");
+		request.setAttribute("importe", 500);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("jstl.jsp");
 		dispatcher.forward(request, response);
 	}
 
