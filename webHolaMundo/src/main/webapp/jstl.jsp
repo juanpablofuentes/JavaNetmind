@@ -10,6 +10,7 @@
 <body>
 	<c:out value="hola que tal" />
 	<!-- importe es un atributo que viene del servlet -->
+	<%=request.getAttribute("importe") %>
 	<c:out value="${importe}" />
 
 	<c:set value="Eva pi" var="nombre" />

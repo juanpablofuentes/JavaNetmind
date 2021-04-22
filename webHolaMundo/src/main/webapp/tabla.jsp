@@ -31,7 +31,7 @@ Integer intentos=(Integer)session.getAttribute("intentos");
 Integer global=(Integer)application.getAttribute("global");
 
 if(nombre==null){
-	response.sendRedirect("login.jsp");
+	response.sendRedirect("./");
 }
 %>
 <h1>Hola <%=nombre %> tienes <%=intentos %> intentos</h1>

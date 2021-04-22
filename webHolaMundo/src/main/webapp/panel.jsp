@@ -23,9 +23,25 @@
 <link rel="stylesheet" type="text/css" href="zstyle.css">
 </head>
 <body>
-<h1>Bienvenido a las utilidades maravillosas del ejercicio</h1>
-<h2><a href="tabla.jsp">Tabla de multiplicar</a></h2>
-<h2><a href="mayor.jsp">Mayor y menor</a></h2>
-<h2><a href="palindromo.jsp">¿Es palíndromo?</a></h2>
+	<%
+	String nombre = (String)session.getAttribute("nombre");
+	if (nombre==null){
+		response.sendRedirect("login.jsp");
+	}
+	%>
+	<h1>
+		Bienvenido
+		<%=nombre%>
+		a las utilidades maravillosas del ejercicio
+	</h1>
+	<h2>
+		<a href="tabla.jsp">Tabla de multiplicar</a>
+	</h2>
+	<h2>
+		<a href="mayor.jsp">Mayor y menor</a>
+	</h2>
+	<h2>
+		<a href="palindromo.jsp">¿Es palíndromo?</a>
+	</h2>
 </body>
 </html>

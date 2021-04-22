@@ -23,15 +23,34 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<!-- Recuperar el nombre y la contraseña. Si es admin admin ir a otra página -->
 
- <form action="./" method="post">
+<%
+String nombre=request.getParameter("nombre");
+String pwd=request.getParameter("pwd");
+
+
+
+if (nombre!=null && pwd!=null && nombre.equals("admin") && pwd.equals("admin")){
+	// Estas variables son accesibles desde cualquier página
+	session.setAttribute("nombre", nombre);
+	session.setAttribute("saludo", "hola que tal");
+	session.setAttribute("intentos", 5);
+	
+	application.setAttribute("global", 27);
+	
+	response.sendRedirect("panel.jsp");
+}
+%>
+
+ <form  method="post">
   <div class="form-group">
     <label for="nombre">Nombre:</label>
     <input type="text" class="form-control" placeholder="Introduce nombre" name="nombre" id="nombre">
   </div>
   <div class="form-group">
     <label for="pwd">Password:</label>
-    <input type="password" class="form-control" placeholder="Introduce contraseña" name="password">
+    <input type="password" class="form-control" placeholder="Introduce contraseña" name="pwd">
   </div>
   
   <button type="submit" class="btn btn-primary">Enviar</button>
