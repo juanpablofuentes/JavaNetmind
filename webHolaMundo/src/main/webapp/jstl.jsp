@@ -10,13 +10,14 @@
 <body>
 	<c:out value="hola que tal" />
 	<!-- importe es un atributo que viene del servlet -->
-	<%=request.getAttribute("importe") %>
+
 	<c:out value="${importe}" />
 
 	<c:set value="Eva pi" var="nombre" />
 
 	<c:out value="${nombre}" />
 
+	<!-- int iva=importe*.21 -->
 	<c:set value="${importe*.21}" var="iva" />
 
 	<c:out value="${iva}" />

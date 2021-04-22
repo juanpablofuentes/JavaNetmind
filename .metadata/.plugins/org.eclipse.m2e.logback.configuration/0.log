@@ -1520,3 +1520,12 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact jstl:jstl:jar
 2021-04-22 08:59:15,209 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\JuanPi\eclipse-workspace\mavenweb\src\main\resources
 2021-04-22 08:59:15,211 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2021-04-22 08:59:15,212 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\JuanPi\eclipse-workspace\mavenweb\src\test\resources
+2021-04-22 11:41:12,039 [Worker-60: Creating maven-archetype-webapp] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' C:\Users\JuanPi\eclipse-workspace\TestMaven\pom.xml
+2021-04-22 11:41:14,021 [Worker-60: Creating maven-archetype-webapp] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.trifulcas:TestMaven:0.0.1-SNAPSHOT @ C:\Users\JuanPi\eclipse-workspace\TestMaven\pom.xml.
+2021-04-22 11:41:14,447 [Worker-60: Creating maven-archetype-webapp] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /TestMaven/src/main/java
+2021-04-22 11:41:14,448 [Worker-60: Creating maven-archetype-webapp] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /TestMaven/src/test/java
+2021-04-22 11:41:15,497 [Worker-60: Creating maven-archetype-webapp] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 3 sec
+2021-04-22 11:41:16,897 [Worker-72: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-22 11:41:16,899 [Worker-72: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\JuanPi\eclipse-workspace\TestMaven\src\main\resources
+2021-04-22 11:41:16,907 [Worker-72: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-04-22 11:41:16,907 [Worker-72: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\JuanPi\eclipse-workspace\TestMaven\src\test\resources
