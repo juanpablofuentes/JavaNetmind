@@ -11,6 +11,7 @@ public class Categoria {
 	private String name;
 	private Date last_update;
 	
+	
 	// Creamos un constructor para crear fácilmente objetos
 	public Categoria(int category_id, String name) {
 		super();

@@ -10,7 +10,7 @@ public class TestDao {
 		System.out.println(drama.getName());
 		
 		CategoriaDAO modelo=new CategoriaDAO();
-		
+		modelo.addCategoria("Pepito");
 		System.out.println(modelo.getCategorias());
 		List<Categoria> categorias=modelo.getCategorias();
 		for(Categoria categoria:categorias) {

@@ -28,8 +28,8 @@
 			<p>Aquí podrá usted hacer el mantenimiento de todas las
 				categorías</p>
 		</div>
-		<a href="categorias?accion=nueva">Añadir una categoría</a>
-
+		<a href="categorias?accion=nueva">Añadir una categoría</a> 
+		
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -40,14 +40,16 @@
 				</tr>
 			</thead>
 			<tbody>
-			<c:forEach var="categoria" items="${categorias}">
-				<tr>
-					<td><c:out value="${categoria.category_id}"/></td>
-					<td><c:out value="${categoria.name}"/></td>
-					<td><c:out value="${categoria.last_update}"/></td>
-					<td><a href="categorias?accion=borrar&id=<c:out value="${categoria.category_id}"/>">Eliminar</a>
-					 | <a href="categorias?accion=editar&id=<c:out value="${categoria.category_id}"/>">Editar</a></td>
-				</tr>
+				<c:forEach var="categoria" items="${categorias}">
+					<tr>
+						<td><c:out value="${categoria.category_id}" /></td>
+						<td><c:out value="${categoria.name}" /></td>
+						<td><c:out value="${categoria.last_update}" /></td>
+						<td><a
+							href="categorias?accion=borrar&id=<c:out value="${categoria.category_id}"/>">Eliminar</a>
+							| <a
+							href="categorias?accion=editar&id=<c:out value="${categoria.category_id}"/>">Editar</a></td>
+					</tr>
 				</c:forEach>
 			</tbody>
 		</table>

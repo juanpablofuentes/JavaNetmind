@@ -103,7 +103,6 @@ public class CategoriaDAO {
 	// Eliminar categoría
 	public int deleteCategoria(Categoria categoria) {
 		return deleteCategoria(categoria.getCategory_id());
-
 	}
 
 	// Eliminar categoría
