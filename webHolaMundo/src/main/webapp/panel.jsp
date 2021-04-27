@@ -25,6 +25,7 @@
 <body>
 	<%
 	String nombre = (String)session.getAttribute("nombre");
+	
 	if (nombre==null){
 		response.sendRedirect("login.jsp");
 	}

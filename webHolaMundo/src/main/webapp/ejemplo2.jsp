@@ -9,19 +9,19 @@
 </head>
 <body>
 
-<%
-String cadena=request.getParameter("cadena");
+	<%
+	String cadena = request.getParameter("cadena");
 
-if (cadena==null){
-	cadena=" ";
-}
+	if (cadena == null) {
+		cadena = " ";
+	}
 
-if (cadena.substring(0,1).equals("s") || cadena.substring(cadena.length()-1).equals("s")){
+	if (cadena.substring(0, 1).equals("s") || cadena.substring(cadena.length() - 1).equals("s")) {
 	%>
 	<h2>La cadena empieza o acaba por s</h2>
 	<%
-}
-%>
+	}
+	%>
 
 	<form>
 		<input type="text" name="cadena"> <input type="submit">
