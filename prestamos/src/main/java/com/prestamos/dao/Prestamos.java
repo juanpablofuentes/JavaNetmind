@@ -23,6 +23,7 @@ public class Prestamos {
 		super();
 		this.idprestamos = idprestamos;
 		this.nombre = nombre;
+		
 		this.titulo = titulo;
 		this.fecha = fecha;
 	}
