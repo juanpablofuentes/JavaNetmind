@@ -2,6 +2,10 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\JuanPi\eclipse-workspace\webHolaMundo\src\main\webapp\ejemploServlet.jsp"/>
+			<item value="C:\Users\JuanPi\eclipse-workspace\TestMavenRapido\pom.xml"/>
+			<item value="C:\Users\JuanPi\eclipse-workspace\"/>
+			<item value="C:\Users\JuanPi\git\pruebagit\cucu.txt"/>
 			<item value="C:\Users\JuanPi\eclipse-workspace\webHolaMundo\src\main\webapp\jstl.jsp"/>
 			<item value="C:\Users\JuanPi\eclipse-workspace\Servers"/>
 			<item value="C:\Users\JuanPi\eclipse-workspace\holaMundo"/>
@@ -16,7 +20,7 @@
 		</list>
 	</section>
 	<section name="MavenProjectWizardArchetypePage">
-		<item key="catalog" value="All Catalogs"/>
+		<item key="catalog" value="internal"/>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
 			<item value="[artifactId]-TRUNK"/>
@@ -28,13 +32,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.trifulcas.TestMaven"/>
 		</list>
 		<list key="groupId">
-			<item value="com.trifulcas"/>
 		</list>
 		<list key="artifactId">
-			<item value="TestMaven"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

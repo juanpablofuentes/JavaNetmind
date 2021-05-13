@@ -23,11 +23,8 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<h1>¡Lanza los dados!</h1>
+	<h1>Trifulcas API</h1>
 
-	<h2>Has sacado un XX</h2>
-
-	<button class="btn btn-primary">Volver a tirar</button>
-
+	<a href="actor">Ir a mantenimiento actores</a>
 </body>
 </html>

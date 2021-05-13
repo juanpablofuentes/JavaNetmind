@@ -17,7 +17,7 @@ import com.trifulcas.dao.ActorDAO;
 /**
  * Servlet implementation class Controlador
  */
-@WebServlet("/")
+@WebServlet("/actor/*")
 public class Controlador extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ActorDAO actorDao;
