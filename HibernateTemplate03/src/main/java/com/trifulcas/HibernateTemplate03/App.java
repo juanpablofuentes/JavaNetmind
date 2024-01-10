@@ -15,5 +15,6 @@ public class App
         second.setFirstName("Ana");
         second.setLastName("Pie");
         dao.saveActor(second);
+        dao.deleteActor(10208);
     }
 }

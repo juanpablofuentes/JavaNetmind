@@ -9,23 +9,22 @@ import org.hibernate.cfg.Configuration;
 
 import com.trifulcas.hibernate.HibernateUtil;
 
-
 public class ActorDAO {
 	private Session session;
 
 	public ActorDAO() {
 		// Crea la fábrica de sesiones utilizando la configuración de hibernate.cfg.xml
 		this.session = HibernateUtil.getSessionFactory().openSession();
-		
+
 	}
 
 	// Método para guardar un nuevo actor
 	public void saveActor(Actor actor) {
-		  Transaction transaction = session.beginTransaction();
-            // save the Alumno object
-            session.persist(actor);
-            // commit transaction
-            transaction.commit();
+		Transaction transaction = session.beginTransaction();
+		// save the Alumno object
+		session.persist(actor);
+		// commit transaction
+		transaction.commit();
 
 	}
 
@@ -37,24 +36,28 @@ public class ActorDAO {
 
 	// Método para obtener todos los actores
 	public List<Actor> getAllActors() {
-			return session.createQuery("FROM Actor", Actor.class).list();
-		
+		return session.createQuery("FROM Actor", Actor.class).list();
+
 	}
 
 	// Método para actualizar un actor existente
 	public void updateActor(Actor actor) {
-			session.persist(actor);
-			
+		Transaction transaction = session.beginTransaction();
+		session.persist(actor);
+		transaction.commit();
+
 	}
 
 	// Método para eliminar un actor por su ID
 	public void deleteActor(int actorId) {
-			Actor actor = session.get(Actor.class, actorId);
-			if (actor != null) {
-				session.delete(actor);
-			}
-		
+		Actor actor = session.get(Actor.class, actorId);
+		if (actor != null) {
+			Transaction transaction = session.beginTransaction();
+			session.remove(actor);
+			transaction.commit();
+
+		}
+
 	}
 
-	
 }
