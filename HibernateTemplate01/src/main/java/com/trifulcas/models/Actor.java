@@ -19,7 +19,7 @@ public class Actor {
 
     @Column(name = "last_update", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date lastUpdate;
+    private Date lastUpdate=new Date();
 
     // Constructor, getters, and setters
 
