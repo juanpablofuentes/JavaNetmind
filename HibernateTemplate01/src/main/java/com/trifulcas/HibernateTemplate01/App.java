@@ -28,7 +28,7 @@ public class App
 			Actor penelope = session.get(Actor.class, 1);
 			
 			System.out.println(penelope.getFirstName() + " " + penelope.getLastName());
-			List<Actor> lista = session.createQuery("from Actor a where a.firstName like '%ar%' ").getResultList();
+			List<Actor> lista = session.createQuery("from Actor a where a.firstName like '%ar%' ", Actor.class).getResultList();
 			for (Actor a : lista) {
 				System.out.println(a);
 			}

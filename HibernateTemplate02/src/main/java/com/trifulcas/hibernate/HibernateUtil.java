@@ -12,8 +12,6 @@ import com.trifulcas.models.Actor;
 
 public class HibernateUtil {
 	  private static  SessionFactory sessionFactory;
-	  
-	   
 	 
 	    public static SessionFactory getSessionFactory() {
 	    	if (sessionFactory == null) {
