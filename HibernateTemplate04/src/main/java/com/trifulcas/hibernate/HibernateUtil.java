@@ -8,9 +8,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
-import com.trifulcas.models.Actor;
-import com.trifulcas.models.City;
-import com.trifulcas.models.Country;
+import com.trifulcas.models.*;
 
 public class HibernateUtil {
 	  private static  SessionFactory sessionFactory;
@@ -37,6 +35,8 @@ public class HibernateUtil {
 					configuration.addAnnotatedClass(Actor.class);
 					configuration.addAnnotatedClass(City.class);
 					configuration.addAnnotatedClass(Country.class);
+					configuration.addAnnotatedClass(Film.class);
+					configuration.addAnnotatedClass(Category.class);
 
 					ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 							.applySettings(configuration.getProperties()).build();
