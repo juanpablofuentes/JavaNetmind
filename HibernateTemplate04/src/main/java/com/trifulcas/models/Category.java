@@ -21,8 +21,12 @@ public class Category {
 	@Column(name = "last_update", nullable = false)
 	private Timestamp lastUpdate;
 
+	// Utilizo también el many to many
+	// Pero en vez de repetir la definición de la tabla
+	// Lo mapeo directamente con la propiedad de la otra entidad
 	@ManyToMany(mappedBy = "categories")
-	private Set<Film> employees = new HashSet<>();
+	// Set porque son valores únicos
+	private Set<Film> films = new HashSet<>();
 
 	public Category() {
 		super();
@@ -36,28 +40,36 @@ public class Category {
 		this.lastUpdate = new Timestamp(now.getTime());
 	}
 
-	protected int getCategoryId() {
+	public int getCategoryId() {
 		return categoryId;
 	}
 
-	protected void setCategoryId(int categoryId) {
+	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
 	}
 
-	protected String getName() {
+	public String getName() {
 		return name;
 	}
 
-	protected void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	protected Timestamp getLastUpdate() {
+	public Timestamp getLastUpdate() {
 		return lastUpdate;
 	}
 
-	protected void setLastUpdate(Timestamp lastUpdate) {
+	public void setLastUpdate(Timestamp lastUpdate) {
 		this.lastUpdate = lastUpdate;
+	}
+
+	public Set<Film> getFilms() {
+		return films;
+	}
+
+	public void setFilms(Set<Film> films) {
+		this.films = films;
 	}
 
 	@Override

@@ -21,8 +21,14 @@ public class Country {
     @Temporal(TemporalType.TIMESTAMP)
     private java.util.Date lastUpdate=new Date();
 
+    // Ponemos ontetomany por ser la tabla del '1'
+    // Mapeamos por la propiedad de la entidad relacionada
+    // Para ahorrarnos especificar otra vez el join column
+    // Cascade dejamos ALL en relaciones 1-N
     @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
-    private List<City> cities;
+    // En vez de una entidad tenemos una lista con
+    // Todas las entidades relacionadas
+    private List<City> cities; // Se cargan cuando haga falta
 
     // Constructor, getters, and setters
 

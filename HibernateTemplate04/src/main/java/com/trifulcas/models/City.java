@@ -16,9 +16,14 @@ public class City {
 	@Column(name = "city", nullable = false)
 	private String city;
 
+	// En la entidad de 'varios' ponemos ManyToOne
 	@ManyToOne
+	// Especificamos cual es la clave foránea de esta relación
 	@JoinColumn(name = "country_id", nullable = false)
-	private Country country;
+	// La propiedad siempre será la entidad relacionada
+	private Country country; // Cuando recuperamos la entidad se cargan automáticamente las entidades relacionadas
+	// Es decir, cuando yo cargo una ciudad se carga su país
+	// Y puedo acceder a sus valores
 
 	@Column(name = "last_update", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -66,9 +71,10 @@ public class City {
 		this.lastUpdate = lastUpdate;
 	}
 
+	// Cuidado con poner country porque entramos en bucle
 	@Override
 	public String toString() {
-		return "City [cityId=" + cityId + ", city=" + city +  "]";
+		return "City [cityId=" + cityId + ", city=" + city + ", country="+country.getCountry()+"]";
 	}
 
 }

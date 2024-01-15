@@ -45,12 +45,16 @@ public class Film {
 	    @Column(name = "last_update", nullable = false)
 	    private Timestamp lastUpdate;
 	    
+	    // Para las relaciones varios a varios usamos ManytoManny
+	    // Ponemos cascade MERGE para que no de error al añadir
 	    @ManyToMany(cascade = { CascadeType.MERGE })
+	    // Especificamos los datos de la tabla intermedia
 	    @JoinTable(
-	        name = "film_category", 
-	        joinColumns = { @JoinColumn(name = "film_id") }, 
-	        inverseJoinColumns = { @JoinColumn(name = "category_id") }
+	        name = "film_category", // NOmbre
+	        joinColumns = { @JoinColumn(name = "film_id") }, // MI foreign key
+	        inverseJoinColumns = { @JoinColumn(name = "category_id") } // Foreign Key de la otra entidad
 	    )
+	    // Tenemos un set porque los valores son únicos
 	    Set<Category> categories = new HashSet<>();
 		public Film() {
 			super();
