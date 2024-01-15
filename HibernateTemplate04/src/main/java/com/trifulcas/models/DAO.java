@@ -41,12 +41,19 @@ public class DAO<T> {
 	}
 
 	public boolean delete(int id) {
+		Transaction transaction = null;
 		try {
+			transaction = session.beginTransaction();
+			
 			T objeto = session.get(entityClass, id);
 			session.remove(objeto);
+			transaction.commit();
 			return true;
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
+			if (transaction != null) {
+				transaction.rollback();
+			}
 			return false;
 		}
 	}
