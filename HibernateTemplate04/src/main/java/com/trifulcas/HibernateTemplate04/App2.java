@@ -22,6 +22,10 @@ public class App2
 		System.out.println(filmDao.get(2));
 		DAO<Category> catDao = new DAO<Category>(Category.class);
 		System.out.println(catDao.get(2));
-		
+		Category cat=new Category("Test");
+		Film peli=filmDao.get(2);
+		//catDao.save(cat);
+		peli.getCategories().add(catDao.get(3));
+		filmDao.save(peli);
   }
 }

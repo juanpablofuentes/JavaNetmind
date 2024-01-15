@@ -45,7 +45,7 @@ public class Film {
 	    @Column(name = "last_update", nullable = false)
 	    private Timestamp lastUpdate;
 	    
-	    @ManyToMany(cascade = { CascadeType.ALL })
+	    @ManyToMany(cascade = { CascadeType.MERGE })
 	    @JoinTable(
 	        name = "film_category", 
 	        joinColumns = { @JoinColumn(name = "film_id") }, 
@@ -74,92 +74,100 @@ public class Film {
 			this.lastUpdate = lastUpdate;
 		}
 
-		protected int getFilmId() {
+		public int getFilmId() {
 			return filmId;
 		}
 
-		protected void setFilmId(int filmId) {
+		public void setFilmId(int filmId) {
 			this.filmId = filmId;
 		}
 
-		protected String getTitle() {
+		public String getTitle() {
 			return title;
 		}
 
-		protected void setTitle(String title) {
+		public void setTitle(String title) {
 			this.title = title;
 		}
 
-		protected String getDescription() {
+		public String getDescription() {
 			return description;
 		}
 
-		protected void setDescription(String description) {
+		public void setDescription(String description) {
 			this.description = description;
 		}
 
-		protected int getReleaseYear() {
+		public int getReleaseYear() {
 			return releaseYear;
 		}
 
-		protected void setReleaseYear(int releaseYear) {
+		public void setReleaseYear(int releaseYear) {
 			this.releaseYear = releaseYear;
 		}
 
-		protected int getLanguageId() {
+		public int getLanguageId() {
 			return languageId;
 		}
 
-		protected void setLanguageId(int languageId) {
+		public void setLanguageId(int languageId) {
 			this.languageId = languageId;
 		}
 
-		protected Integer getOriginalLanguageId() {
+		public Integer getOriginalLanguageId() {
 			return originalLanguageId;
 		}
 
-		protected void setOriginalLanguageId(Integer originalLanguageId) {
+		public void setOriginalLanguageId(Integer originalLanguageId) {
 			this.originalLanguageId = originalLanguageId;
 		}
 
-		protected int getRentalDuration() {
+		public int getRentalDuration() {
 			return rentalDuration;
 		}
 
-		protected void setRentalDuration(int rentalDuration) {
+		public void setRentalDuration(int rentalDuration) {
 			this.rentalDuration = rentalDuration;
 		}
 
-		protected BigDecimal getRentalRate() {
+		public BigDecimal getRentalRate() {
 			return rentalRate;
 		}
 
-		protected void setRentalRate(BigDecimal rentalRate) {
+		public void setRentalRate(BigDecimal rentalRate) {
 			this.rentalRate = rentalRate;
 		}
 
-		protected Integer getLength() {
+		public Integer getLength() {
 			return length;
 		}
 
-		protected void setLength(Integer length) {
+		public void setLength(Integer length) {
 			this.length = length;
 		}
 
-		protected BigDecimal getReplacementCost() {
+		public BigDecimal getReplacementCost() {
 			return replacementCost;
 		}
 
-		protected void setReplacementCost(BigDecimal replacementCost) {
+		public void setReplacementCost(BigDecimal replacementCost) {
 			this.replacementCost = replacementCost;
 		}
 
-		protected Timestamp getLastUpdate() {
+		public Timestamp getLastUpdate() {
 			return lastUpdate;
 		}
 
-		protected void setLastUpdate(Timestamp lastUpdate) {
+		public void setLastUpdate(Timestamp lastUpdate) {
 			this.lastUpdate = lastUpdate;
+		}
+
+		public Set<Category> getCategories() {
+			return categories;
+		}
+
+		public void setCategories(Set<Category> categories) {
+			this.categories = categories;
 		}
 
 		@Override
