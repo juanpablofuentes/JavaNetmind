@@ -37,6 +37,9 @@ public class HibernateUtil {
 					configuration.addAnnotatedClass(Country.class);
 					configuration.addAnnotatedClass(Film.class);
 					configuration.addAnnotatedClass(Category.class);
+					configuration.addAnnotatedClass(Profesor.class);
+					configuration.addAnnotatedClass(Alumno.class);
+					configuration.addAnnotatedClass(Curso.class);
 
 					ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 							.applySettings(configuration.getProperties()).build();

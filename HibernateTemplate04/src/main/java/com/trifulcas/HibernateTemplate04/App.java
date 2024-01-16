@@ -1,19 +1,21 @@
 package com.trifulcas.HibernateTemplate04;
 
-import com.trifulcas.models.Actor;
-import com.trifulcas.models.Category;
-import com.trifulcas.models.City;
-import com.trifulcas.models.Country;
+import com.trifulcas.models.Alumno;
+import com.trifulcas.models.Curso;
 import com.trifulcas.models.DAO;
-import com.trifulcas.models.Film;
 
-/**
- * Hello world!
- *
- */
+
 public class App {
 	public static void main(String[] args) {
-		DAO<City> cityDao = new DAO<City>(City.class);
-		System.out.println(cityDao.get(2));
+		DAO<Curso> cursoDao=new DAO<Curso>(Curso.class);
+		DAO<Alumno> alumnoDao=new DAO<Alumno>(Alumno.class);
+		
+		Curso c=cursoDao.get(1);
+		Alumno a=alumnoDao.get(1);
+		
+		a.getCursos().add(c);
+		alumnoDao.save(a);
+		
+	
 	}
 }
