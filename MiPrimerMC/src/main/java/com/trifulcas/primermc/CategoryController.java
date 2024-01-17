@@ -45,4 +45,9 @@ public class CategoryController {
 		categoryRepository.save(cat);
 		return "Saved "+cat.getCategoryId();
 	}
+	@GetMapping("/delete/{id}")
+	public String deleteCat(@PathVariable int id) {
+		 categoryRepository.deleteById(id);
+		 return "Borrado";
+	}
 }
