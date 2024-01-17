@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Categorías</title>
+	<!-- Latest compiled and minified CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+	<div class="container">
+
+		<div th:switch="${categories}">
+			<h2 th:case="null">No hay categorías</h2>
+			<div th:case="*">
+				<h2>Categorías</h2>
+				<p><a class="btn btn-success" href="/cat/add">Añadir categoría</a></p>
+
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Nombre</th>
+							<th>Editar</th>
+							<th>Borrar</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="category : ${categories}">
+							<td th:text="${category.name}"></td>
+							<td><a class="btn btn-primary"
+									th:href="@{/cat/edit/{id}(id=${category.categoryId})}">Editar</a>
+							</td>
+							<td><a class="btn btn-danger"
+									th:href="@{/cat/delete/{id}(id=${category.categoryId})}">Borrar</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
