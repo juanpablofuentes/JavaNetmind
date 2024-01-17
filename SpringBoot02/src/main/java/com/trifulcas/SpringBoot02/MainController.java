@@ -20,12 +20,12 @@ public class MainController {
 
 		Category cat = new Category(name);
 		categoryRepository.save(cat);
-		return "Saved";
+		return "Saved "+cat.getCategoryId();
 	}
 
 	@GetMapping("/all")
 	public @ResponseBody Iterable<Category> getAllCategories() {
-		System.out.println(categoryRepository.findAll());
+		//System.out.println(categoryRepository.findAll());
 		return categoryRepository.findAll();
 	}
 
