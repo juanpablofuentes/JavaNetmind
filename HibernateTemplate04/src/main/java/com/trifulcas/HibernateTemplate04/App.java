@@ -1,20 +1,28 @@
 package com.trifulcas.HibernateTemplate04;
 
-import com.trifulcas.models.Alumno;
-import com.trifulcas.models.Curso;
+import java.util.List;
+
+import com.trifulcas.models.Actor;
 import com.trifulcas.models.DAO;
+
+import jakarta.persistence.Query;
 
 
 public class App {
 	public static void main(String[] args) {
-		DAO<Curso> cursoDao=new DAO<Curso>(Curso.class);
-		DAO<Alumno> alumnoDao=new DAO<Alumno>(Alumno.class);
+		DAO<Actor> ActorDao = new DAO<Actor>(Actor.class);
 		
-		Curso c=cursoDao.get(1);
-		Alumno a=alumnoDao.get(1);
+		ActorDao.getAll()
+		Query query = ActorDao.session.createQuery("from Actor where firstName like :param order by firstName", Actor.class);
+		query.setParameter("param", "%s%");
+		query.setFirstResult(0);
+		query.setMaxResults(10);
+
+		List<Actor> pelis=query.getResultList();
 		
-		a.getCursos().add(c);
-		alumnoDao.save(a);
+		for(Actor Actor:pelis) {
+			System.out.println(Actor);
+		}
 		
 	
 	}

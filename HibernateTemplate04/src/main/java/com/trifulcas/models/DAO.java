@@ -9,7 +9,7 @@ import com.trifulcas.hibernate.HibernateUtil;
 
 public class DAO<T> {
 	private Class<T> entityClass;
-	private Session session;
+	public Session session;
 
 	public DAO(Class<T> clase) {
 		this.entityClass = clase;
