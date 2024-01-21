@@ -76,11 +76,8 @@ public class FilmController {
 	}
 	@PostMapping("/film/{idfilm}/category/{idcategory}")
 	public ResponseEntity<Film> addFilmCategory(@PathVariable("idfilm") int idfilm,@PathVariable("idcategory") int idcategory) {
-		System.out.println(idfilm+"-"+idcategory);
 		Film film=filmRepository.findById(idfilm).orElse(null);
 		Category category = categoryRepository.findById(idcategory).orElse(null);
-			System.out.println(film);
-			System.out.println(category);
 		if (film==null || category==null) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
@@ -103,5 +100,18 @@ public class FilmController {
 	public ResponseEntity<HttpStatus> deleteFilm(@PathVariable("id") int id) {
 		filmRepository.deleteById(id);
 		return new ResponseEntity<>(HttpStatus.OK);
+	}
+	@DeleteMapping("/film/{idfilm}/category/{idcategory}")
+	public ResponseEntity<Film> deleteFilmCategory(@PathVariable("idfilm") int idfilm,@PathVariable("idcategory") int idcategory) {
+		Film film=filmRepository.findById(idfilm).orElse(null);
+		System.out.println(film);
+			Category category = categoryRepository.findById(idcategory).orElse(null);
+		film.getCategories().remove(category);
+			System.out.println(film);
+			System.out.println(category);
+		if (film==null || category==null) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<>(filmRepository.save(film), HttpStatus.CREATED);
 	}
 }

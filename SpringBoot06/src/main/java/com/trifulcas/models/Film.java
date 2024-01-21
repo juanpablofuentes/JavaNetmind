@@ -173,7 +173,7 @@ public class Film {
 		public void setCategories(Set<Category> categories) {
 			this.categories = categories;
 		}
-
+		
 		@Override
 		public String toString() {
 			return "Film [filmId=" + filmId + ", title=" + title + ", description=" + description + ", releaseYear="
