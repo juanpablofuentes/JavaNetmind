@@ -1,4 +1,4 @@
-package com.trifulcas.SpringBoot04;
+package com.trifulcas.SpringBootRest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,11 +9,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @ComponentScan("com.trifulcas")
 @EntityScan("com.trifulcas.models")
-@EnableJpaRepositories("com.trifulcas.repository")
-public class SpringBoot04Application {
+@EnableJpaRepositories("com.trifulcas.repositories")
+public class SpringBootRestApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBoot04Application.class, args);
+		SpringApplication.run(SpringBootRestApplication.class, args);
 	}
 
 }

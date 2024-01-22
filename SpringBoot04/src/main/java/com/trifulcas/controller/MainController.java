@@ -37,8 +37,10 @@ public class MainController {
 	}
 	@PutMapping("/update/{id}")
 	public Category update(@RequestBody Category cat,@PathVariable int id) {
+		// name="pepe" id=100
 		return categoryRepository.findById(id).map(oldCategory->
 		{
+			// Copia todos los campos
 			BeanUtils.copyProperties(cat,oldCategory);
 			return categoryRepository.save(oldCategory);
 		}).orElseGet(()->{
@@ -50,5 +52,8 @@ public class MainController {
 	public void deleteById(@PathVariable int id) {
 		categoryRepository.deleteById(id);
 	}
-	
+	@DeleteMapping("/get/{id}")
+	public Category deleteRaroById(@PathVariable int id) {
+		return categoryRepository.findById(id).get();
+	}
 }
