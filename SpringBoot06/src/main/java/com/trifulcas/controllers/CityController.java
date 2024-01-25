@@ -38,7 +38,11 @@ public class CityController {
 		}
 		return new ResponseEntity<>(res, HttpStatus.OK);
 	}
-
+	/**
+	 * Test swagger
+	 * @param id
+	 * @return
+	 */
 	@GetMapping("/city/{id}")
 	public ResponseEntity<City> getCity(@PathVariable("id") int id) {
 		City city = cityRepository.findById(id)
@@ -51,9 +55,12 @@ public class CityController {
 		}
 	}
 
+	// Utilizo el formato estándar de la API REST para obtener los registros relacionados
+	// de otra tabla. El campo id va enmedio de las dos
 	@GetMapping("/country/{id}/city")
 	public ResponseEntity<List<City>> getAllByCountry(@PathVariable("id") int id) {
 		List<City> res = new ArrayList<>();
+		// Usamos la consulta de JPA para buscar por el id de country
 		cityRepository.findByCountryCountryId(id).forEach(res::add);
 		if (res.isEmpty()) {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -87,9 +94,11 @@ public class CityController {
 		}
 		return new ResponseEntity<>(cityRepository.save(temp), HttpStatus.OK);
 	}
-
+	
+	// Borro todas las ciudades de un país, ojo con esto que nos cargamos los datos a lo loco
 	@DeleteMapping("/country/{id}/city")
 	public ResponseEntity<HttpStatus> deleteCityCountry(@PathVariable("id") int id) {
+		// No recupero el country, me basta con saber que existe
 		if (!countryRepository.existsById(id)) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		} else {

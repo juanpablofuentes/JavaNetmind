@@ -40,10 +40,15 @@ public class CategoryController {
 		return new ResponseEntity<>(res, HttpStatus.OK);
 	}
 
+	/**
+	 * Recupero todas las categorías de una película dada
+	 * @param id de la película
+	 * @return lista de categorías
+	 */
 	@GetMapping("film/{id}/category")
 	public ResponseEntity<List<Category>> getAllByFilm(@PathVariable("id") int id) {
 		List<Category> res = new ArrayList<>();
-		categoryRepository.findCategoryByFilmsFilmId(id).forEach(res::add);
+		categoryRepository.findByFilmsFilmId(id).forEach(res::add);
 		if (res.isEmpty()) {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}

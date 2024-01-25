@@ -29,7 +29,10 @@ public class Category {
 	@Column(name = "last_update", nullable = false)
 	private Timestamp lastUpdate;
 
+	// Como ya hemos especificado los datos de la tabla en film
+	// Aquí nos basta con especificar la entidad en Film
 	@ManyToMany(mappedBy="categories")
+	// Anotación para evitar que al recuperar la categoría salgan las películas
 	@JsonIgnore
 	private Set<Film> films=new HashSet<>();
 	

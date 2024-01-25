@@ -37,6 +37,9 @@ public class FilmController {
 		if (text == null) {
 			filmRepository.findAll().forEach(res::add);
 		} else {
+			// He creado una consulta que busca en dos campos pero hago trampa
+			// En realidad busco el mismo texto en los dos
+			// Ojo con estas consultas que son muy útiles pero se hacen gigantescas
 			filmRepository.findByTitleContainingOrDescriptionContaining(text, text).forEach(res::add);
 		}
 		if (res.isEmpty()) {
@@ -44,7 +47,11 @@ public class FilmController {
 		}
 		return new ResponseEntity<>(res, HttpStatus.OK);
 	}
-
+	/**
+	 * Devuelvo todas las películas de una categoría
+	 * @param id de la categoría
+	 * @return lista de películas
+	 */
 	@GetMapping("category/{id}/film")
 	public ResponseEntity<List<Film>> getAllByFilm(@PathVariable("id") int id) {
 		List<Film> res = new ArrayList<>();
@@ -75,14 +82,19 @@ public class FilmController {
 		return new ResponseEntity<>(filmRepository.save(temp), HttpStatus.CREATED);
 	}
 
+	// Para añadir películas a categorías uso esta url que también es estándar
+	// Pongo los ids de películas y categorías
 	@PostMapping("/film/{idfilm}/category/{idcategory}")
 	public ResponseEntity<Film> addFilmCategory(@PathVariable("idfilm") int idfilm,
 			@PathVariable("idcategory") int idcategory) {
+		// Recupero la película y la categoría
 		Film film = filmRepository.findById(idfilm).orElse(null);
 		Category category = categoryRepository.findById(idcategory).orElse(null);
 		if (film == null || category == null) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
+		// Basta con añadir la categoría a la lista de las categorías de esa película
+		// Y guardarla, spring boot se encarga del resto
 		film.getCategories().add(category);
 		return new ResponseEntity<>(filmRepository.save(film), HttpStatus.CREATED);
 	}
@@ -95,7 +107,6 @@ public class FilmController {
 		} else {
 			BeanUtils.copyProperties(film, temp);
 			return new ResponseEntity<>(filmRepository.save(temp), HttpStatus.OK);
-
 		}
 	}
 
@@ -104,7 +115,7 @@ public class FilmController {
 		filmRepository.deleteById(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
-
+	// La misma url que en el post pero en este caso para eliminar
 	@DeleteMapping("/film/{idfilm}/category/{idcategory}")
 	public ResponseEntity<Film> deleteFilmCategory(@PathVariable("idfilm") int idfilm,
 			@PathVariable("idcategory") int idcategory) {
@@ -113,6 +124,7 @@ public class FilmController {
 		if (film == null || category == null) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
+		// Si antes añadía ahora lo elimino
 		film.getCategories().remove(category);
 		
 		return new ResponseEntity<>(filmRepository.save(film), HttpStatus.CREATED);

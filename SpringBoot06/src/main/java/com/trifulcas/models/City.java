@@ -24,7 +24,9 @@ public class City {
     @Column(name = "city", nullable = false)
     private String city;
 
+    // Relación 1 a N 
     @ManyToOne
+    // Especificamos la columna de la tabla que marca la relación (FK)
     @JoinColumn(name = "country_id", nullable = false)
     private Country country;
 
