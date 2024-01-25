@@ -30,7 +30,7 @@ public class CountryController {
 	public ResponseEntity<List<Country>> getAll(@RequestParam(required = false) String country) {
 		List<Country> res = new ArrayList<>();
 		if (country == null) {
-			countryRepository.findAll().forEach(res::add);
+			countryRepository.findAll().forEach(res::add); 
 		} else {
 			countryRepository.findByCountryContaining(country).forEach(res::add);
 		}

@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan({ "com.trifulcas" })
+@ComponentScan( "com.trifulcas" )
 @EntityScan("com.trifulcas.models")
 @EnableJpaRepositories("com.trifulcas.repositories")
 

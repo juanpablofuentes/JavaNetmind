@@ -38,7 +38,7 @@ public class CityController {
 		}
 		return new ResponseEntity<>(res, HttpStatus.OK);
 	}
-	
+
 	@GetMapping("/city/{id}")
 	public ResponseEntity<City> getCity(@PathVariable("id") int id) {
 		City city = cityRepository.findById(id)
@@ -50,7 +50,7 @@ public class CityController {
 			return new ResponseEntity<>(city, HttpStatus.OK);
 		}
 	}
-	
+
 	@GetMapping("/country/{id}/city")
 	public ResponseEntity<List<City>> getAllByCountry(@PathVariable("id") int id) {
 		List<City> res = new ArrayList<>();
@@ -60,40 +60,44 @@ public class CityController {
 		}
 		return new ResponseEntity<>(res, HttpStatus.OK);
 	}
+
 	@PostMapping("/country/{id}/city")
-	public ResponseEntity<City> addCity(@PathVariable("id") int id,@RequestBody City city) {
-		Country country=countryRepository.findById(id).orElse(null);
+	public ResponseEntity<City> addCity(@PathVariable("id") int id, @RequestBody City city) {
+		Country country = countryRepository.findById(id).orElse(null);
 		if (country == null) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
-		
-		City temp = new City(city.getCity(),country);
+
+		City temp = new City(city.getCity(), country);
 		return new ResponseEntity<>(cityRepository.save(temp), HttpStatus.CREATED);
 	}
+
 	@PutMapping("/city/{id}")
-	public ResponseEntity<City> updateCity(@PathVariable("id") int id,@RequestBody City city) {
-			City temp=cityRepository.findById(id).orElse(null);
+	public ResponseEntity<City> updateCity(@PathVariable("id") int id, @RequestBody City city) {
+		City temp = cityRepository.findById(id).orElse(null);
 		if (temp == null) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 		temp.setCity(city.getCity());
-		if (city.getCountry()!=null) {
-			Country country=countryRepository.findById(city.getCountry().getCountryId()).orElse(null);
-			if (country!=null) {
+		if (city.getCountry() != null) {
+			Country country = countryRepository.findById(city.getCountry().getCountryId()).orElse(null);
+			if (country != null) {
 				temp.setCountry(country);
 			}
 		}
 		return new ResponseEntity<>(cityRepository.save(temp), HttpStatus.OK);
 	}
+
 	@DeleteMapping("/country/{id}/city")
 	public ResponseEntity<HttpStatus> deleteCityCountry(@PathVariable("id") int id) {
 		if (!countryRepository.existsById(id)) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}else {
+		} else {
 			cityRepository.deleteByCountryCountryId(id);
 			return new ResponseEntity<>(HttpStatus.OK);
 		}
-		}
+	}
+
 	@DeleteMapping("/city/{id}")
 	public ResponseEntity<HttpStatus> deleteCity(@PathVariable("id") int id) {
 		cityRepository.deleteById(id);

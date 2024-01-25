@@ -48,7 +48,7 @@ public class FilmController {
 	@GetMapping("category/{id}/film")
 	public ResponseEntity<List<Film>> getAllByFilm(@PathVariable("id") int id) {
 		List<Film> res = new ArrayList<>();
-		filmRepository.findFilmByCategoriesCategoryId(id).forEach(res::add);
+		filmRepository.findByCategoriesCategoryId(id).forEach(res::add);
 		if (res.isEmpty()) {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
@@ -74,16 +74,19 @@ public class FilmController {
 		film.setFilmId(0);
 		return new ResponseEntity<>(filmRepository.save(temp), HttpStatus.CREATED);
 	}
+
 	@PostMapping("/film/{idfilm}/category/{idcategory}")
-	public ResponseEntity<Film> addFilmCategory(@PathVariable("idfilm") int idfilm,@PathVariable("idcategory") int idcategory) {
-		Film film=filmRepository.findById(idfilm).orElse(null);
+	public ResponseEntity<Film> addFilmCategory(@PathVariable("idfilm") int idfilm,
+			@PathVariable("idcategory") int idcategory) {
+		Film film = filmRepository.findById(idfilm).orElse(null);
 		Category category = categoryRepository.findById(idcategory).orElse(null);
-		if (film==null || category==null) {
+		if (film == null || category == null) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 		film.getCategories().add(category);
 		return new ResponseEntity<>(filmRepository.save(film), HttpStatus.CREATED);
 	}
+
 	@PutMapping("/film/{id}")
 	public ResponseEntity<Film> updateFilm(@PathVariable("id") int id, @RequestBody Film film) {
 		Film temp = filmRepository.findById(id).orElse(null);
@@ -101,17 +104,17 @@ public class FilmController {
 		filmRepository.deleteById(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
+
 	@DeleteMapping("/film/{idfilm}/category/{idcategory}")
-	public ResponseEntity<Film> deleteFilmCategory(@PathVariable("idfilm") int idfilm,@PathVariable("idcategory") int idcategory) {
-		Film film=filmRepository.findById(idfilm).orElse(null);
-		System.out.println(film);
-			Category category = categoryRepository.findById(idcategory).orElse(null);
-		film.getCategories().remove(category);
-			System.out.println(film);
-			System.out.println(category);
-		if (film==null || category==null) {
+	public ResponseEntity<Film> deleteFilmCategory(@PathVariable("idfilm") int idfilm,
+			@PathVariable("idcategory") int idcategory) {
+		Film film = filmRepository.findById(idfilm).orElse(null);
+		Category category = categoryRepository.findById(idcategory).orElse(null);
+		if (film == null || category == null) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
+		film.getCategories().remove(category);
+		
 		return new ResponseEntity<>(filmRepository.save(film), HttpStatus.CREATED);
 	}
 }

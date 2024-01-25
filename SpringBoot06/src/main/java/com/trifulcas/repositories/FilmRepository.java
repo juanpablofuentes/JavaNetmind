@@ -9,6 +9,6 @@ import com.trifulcas.models.Film;
 public interface FilmRepository extends JpaRepository<Film, Integer> {
 	List<Film> findByTitleContainingOrDescriptionContaining(String text1, String text2);
 
-	List<Film> findFilmByCategoriesCategoryId(int id);
+	List<Film> findByCategoriesCategoryId(int id);
 
 }
