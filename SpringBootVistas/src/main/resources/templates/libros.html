@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Lista de autores</title>
+	<!-- Latest compiled and minified CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+	<h2>Libros</h2>
+	<!-- El th:each es como un bucle foreach, en este caso le estamos diciendo 
+que recorra la variable autores y lo guarde en una variable llamada autor
+	-->
+	<a class="btn btn-success" th:href="@{/libro/add}">Añadir libro</a>
+	<a class="btn btn-primary" th:href="@{/}">Ir al índice</a>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Titulo</th>
+        <th>Páginas</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+     <tbody>
+		<!-- Puedo acceder a la propiedad libros porque mi entidad autor
+		tiene un getLibros() que me devuelve los libros y los recorro con el each -->
+      <tr th:each="libro: ${libros}">
+        <td><a class="btn btn-primary" th:href="@{/libro/{id}(id=${libro.idlibro})}"><span th:text="${libro.idlibro}"></span></a></td>
+         <td><span th:text="${libro.titulo}"></span></td>
+       <td><span th:text="${libro.paginas}"></span></td>
+    <td>	<a class="btn btn-secondary" th:href="@{/libro/edit/{id}(id=${libro.idlibro})}">Editar</a>
+			<a class="btn btn-danger" th:href="@{/libro/delete/{id}(id=${libro.idlibro})}">Borrar</a>
+	</td>
+      </tr>
+     
+    </tbody>
+  </table>
+	
+</body>
+
+</html>

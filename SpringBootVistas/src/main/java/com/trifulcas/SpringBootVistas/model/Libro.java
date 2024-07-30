@@ -2,6 +2,7 @@ package com.trifulcas.SpringBootVistas.model;
 
 import java.util.Set;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -33,7 +34,7 @@ public class Libro {
     // toda la relación con la especificación de la tabla intermedia
     // Y los campos relacionados. Yo lo he hecho aquí pero podría ser
     // en autor, es lo mismo
-    @ManyToMany
+    @ManyToMany(cascade=CascadeType.PERSIST)
     @JoinTable(
         name = "libro_autor",
         joinColumns = @JoinColumn(name = "idlibro"),
