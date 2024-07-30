@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Autor</title>
+	<!-- Latest compiled and minified CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+<h2>Autor</h2>
+<!-- El th:each es como un bucle foreach, en este caso le estamos diciendo 
+que recorra la variable autores y lo guarde en una variable llamada autor
+	-->
+	<div class="card w-50">
+		<!-- Si yo estoy guardando cada elemento en una variable llamada 'autor'
+		puedo acceder a sus propiedades y mostrarlas -->
+		<div class="card-header"><span th:text="${autor.idautor}"></span></div>
+		<!--
+			Cuando accedemos a la propiedad nombre spring boot busca el getter
+			Es decir, intentará acceder a getNombre() -->
+		<div class="card-body"><span th:text="${autor.nombre}"></span></div>
+	</div>
+	<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Titulo</th>
+        <th>Páginas</th>
+      </tr>
+    </thead>
+    <tbody>
+		<!-- Puedo acceder a la propiedad libros porque mi entidad autor
+		tiene un getLibros() que me devuelve los libros y los recorro con el each -->
+      <tr th:each="libro: ${autor.libros}">
+        <td><span th:text="${libro.idlibro}"></span></td>
+         <td><span th:text="${libro.titulo}"></span></td>
+       <td><span th:text="${libro.paginas}"></span></td>
+    
+      </tr>
+     
+    </tbody>
+  </table>
+  	<a class="btn btn-primary" th:href="@{/autor}">Ir al índice</a>
+
+</body>
+
+</html>

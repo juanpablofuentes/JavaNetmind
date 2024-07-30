@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Editar Género</title>
+	<!-- Latest compiled and minified CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+	<h2>Editar Género</h2>
+	<!-- Lo primero es hacer un formulario con los campos de autor, en este caso el nombre
+	-->
+	<form th:action="@{/genero/update/{id}(id=${genero.idgenero})}" th:object="${genero}" method="POST">
+		<input type="hidden" th:field="*{idgenero}" id="idgenero">
+
+		<label for="name">Nombre</label>
+		<!-- el campo hace referencia a la propiedad nombre -->
+		<input type="text" th:field="*{nombre}" id="nombre" placeholder="Nombre">
+		<!-- Si hay algún error lo mostramos (viene de result) -->
+		<span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></span>
+		<input class="btn btn-success" type="submit" value="Modificar">
+	<a class="btn btn-primary" th:href="@{/genero}">Ir al índice</a>
+
+	</form>
+</body>
+
+</html>
